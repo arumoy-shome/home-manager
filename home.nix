@@ -73,7 +73,7 @@
   programs.helix.enable = false;
 
   programs.neovim = {
-    enable = false;
+    enable = true;
     defaultEditor = true;
     vimAlias = true;
     vimdiffAlias = true;

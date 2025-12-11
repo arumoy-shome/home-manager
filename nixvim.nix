@@ -1,12 +1,13 @@
-# vim: expandtab sw=2
+# vim: expandtab sw=2 foldmethod=marker
 
 { lib, pkgs, ... }:
 
 {
-  enable = true;
+  enable = false;
   vimAlias = true;
   clipboard.register = "unnamedplus";
   colorschemes.modus.enable = true;
+  # plugins {{{
   plugins = {
     mini.enable = true;
     mini-basics = {
@@ -35,13 +36,6 @@
     mini-pick.enable = true;
     treesitter = {
       enable = true;
-      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-        latex
-        bibtex
-        typst
-        nix
-        python
-      ];
       settings = {
         highlight.enable = true;
         indent.enable = true;
@@ -55,10 +49,22 @@
           bib = [ "tex-fmt" ];
           python = [ "ruff_format" "ruff_organize_imports" ];
         };
+        format_on_save = {
+          lsp_format = "fallback";
+          timeout_ms = 500;
+        };
       };
     };
     lspconfig.enable = true;
+    dap-python.enable = true;
+    dap-view.enable = true;
+    vimtex = {
+      enable = true;
+      settings.compiler_method = "tectonic";
+    };
   };
+  # }}}
+  # keymaps {{{
   keymaps = [
     {
       action = "<cmd>nohlsearch<cr>";
@@ -86,6 +92,8 @@
       mode = "n";
     }
   ];
+  # }}}
+  # lsp {{{
   lsp = {
     keymaps = [
       {
@@ -96,6 +104,8 @@
     ];
     servers = {
       ty.enable = true;
+      marksman.enable = true;
     };
   };
+  # }}}
 }
