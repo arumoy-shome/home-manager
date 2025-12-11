@@ -37,28 +37,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.emacs = {
-    enable = false;
-    extraPackages = epkgs: [
-      epkgs.nix-mode
-      epkgs.markdown-mode
-      epkgs.olivetti
-      epkgs.diminish
-      epkgs.auctex
-      epkgs.exec-path-from-shell
-      epkgs.evil
-      epkgs.evil-org
-      epkgs.evil-surround
-      epkgs.evil-commentary
-      epkgs.evil-collection
-      epkgs.orderless
-      epkgs.consult
-      epkgs.corfu
-      epkgs.magit
-      epkgs.org-modern
-      epkgs.denote
-    ];
-  };
+  programs.emacs.enable = true;
 
   programs.neovide = {
     enable = false;
@@ -217,6 +196,7 @@
       "*.fdb_latexmk"
     ];
   };
+# NOTE: using homebrew until build failure is fixed
   programs.gitui.enable = false;
   programs.delta = {
     enable = true;
@@ -262,8 +242,8 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "Lilex";
-      size = 20.0;
+      name = "SauceCodePro Nerd Font";
+      size = 18.0;
     };
     keybindings = {
       "kitty_mod+enter" = "launch --cwd=current";
@@ -295,4 +275,5 @@
     enable = true;
     settings = {};
   };
+  programs.ty.enable = true;
 }
