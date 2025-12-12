@@ -1,6 +1,6 @@
 # vim: expandtab sw=2
 
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages =
     [];
@@ -11,7 +11,7 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   # Set Git commit hash for darwin-version.
-  system.configurationRevision = self.rev or self.dirtyRev or null;
+  system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
