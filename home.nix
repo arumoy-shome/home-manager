@@ -15,8 +15,6 @@
   home.packages = [
     pkgs.python314
     pkgs.tectonic
-    pkgs.nerd-fonts.sauce-code-pro
-    pkgs.lilex
     pkgs.ltex-ls-plus
     pkgs.typst
   ];

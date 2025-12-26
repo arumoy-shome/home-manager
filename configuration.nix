@@ -5,6 +5,8 @@
   environment.systemPackages =
     [];
 
+  fonts.packages = [ pkgs.nerd-fonts.sauce-code-pro ];
+
   nix.settings.experimental-features = "nix-command flakes";
   nix.enable = false;
 
