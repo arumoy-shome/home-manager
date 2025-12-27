@@ -35,7 +35,10 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.emacs.enable = true;
+  programs.emacs = {
+    enable = false;
+    extraPackages = epkgs: [ epkgs.vterm ];
+  };
 
   programs.neovide = {
     enable = false;
@@ -112,6 +115,7 @@
       code = "$HOME/code";
     };
 
+    # NOTE: bug in nix-darwin
     initContent = ''
       if [[ $(uname -m) == 'arm64' ]]
       then
@@ -202,7 +206,7 @@
   };
 
   programs.tmux = {
-    enable = true;
+    enable = false;
     terminal = "tmux-256color";
     extraConfig = "
       set-option -a terminal-features 'xterm-256color:RGB'

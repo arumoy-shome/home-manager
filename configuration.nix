@@ -1,7 +1,6 @@
-# vim: expandtab sw=2
-
 { pkgs, inputs, ... }:
 {
+  environment.enableAllTerminfo = true;
   environment.systemPackages =
     [];
 
@@ -109,6 +108,9 @@
       ];
     };
   };
+
+  programs.direnv.enable = true;
+
   users.users.aru = {
     name = "aru";
     home = "/Users/aru";
