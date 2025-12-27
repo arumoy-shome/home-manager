@@ -50,7 +50,7 @@
   programs.helix.enable = false;
 
   programs.neovim = {
-    enable = true;
+    enable = false;
     defaultEditor = true;
     vimAlias = true;
     vimdiffAlias = true;
@@ -69,7 +69,7 @@
   };
 
   programs.vim = {
-    enable = true;
+    enable = false;
     defaultEditor = false;
     plugins = [
       pkgs.vimPlugins.vim-sensible

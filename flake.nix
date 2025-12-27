@@ -1,7 +1,7 @@
 # vim: expandtab sw=2
 
 {
-  description = "Example nix-darwin system flake";
+  description = "My nix-darwin and home-manager config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -13,12 +13,11 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs }: {
+  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs, nixvim }: {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#aru-mbp13
     darwinConfigurations."aru-mbp13" = nix-darwin.lib.darwinSystem {
       modules = [
-        configuration
         nixvim.nixDarwinModules.nixvim {
           programs.nixvim.imports = [ ./nixvim.nix ];
         }

@@ -1,12 +1,14 @@
-# vim: expandtab sw=2 foldmethod=marker
-
 { lib, pkgs, ... }:
 
 {
-  enable = false;
+  enable = true;
   vimAlias = true;
   clipboard.register = "unnamedplus";
   colorschemes.modus.enable = true;
+  opts = {
+    expandtab = true;
+    shiftwidth = 2;
+  };
   # plugins {{{
   plugins = {
     mini.enable = true;
@@ -29,6 +31,7 @@
     mini-surround.enable = true;
     mini-trailspace.enable = true;
     mini-icons.enable = true;
+    mini-indentscope.enable = true;
     mini-statusline.enable = true;
     mini-tabline.enable = true;
     mini-files.enable = true;
@@ -36,10 +39,9 @@
     mini-pick.enable = true;
     treesitter = {
       enable = true;
-      settings = {
-        highlight.enable = true;
-        indent.enable = true;
-      };
+      highlight.enable = true;
+      indent.enable = true;
+      folding.enable = true;
     };
     conform-nvim = {
       enable = true;
@@ -56,6 +58,7 @@
       };
     };
     lspconfig.enable = true;
+    dap.enable = true;
     dap-python.enable = true;
     dap-view.enable = true;
     vimtex = {
