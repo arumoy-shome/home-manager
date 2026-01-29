@@ -60,6 +60,10 @@
         alt-shift-3 = "move-node-to-workspace 3";
         alt-shift-4 = "move-node-to-workspace 4";
         alt-shift-5 = "move-node-to-workspace 5";
+        alt-shift-a = "move-node-to-workspace A";
+        alt-shift-b = "move-node-to-workspace B";
+        alt-shift-r = "move-node-to-workspace R";
+        alt-shift-s = "move-node-to-workspace S";
         alt-tab = "workspace-back-and-forth";
         alt-shift-tab = "move-workspace-to-monitor --wrap-around next";
       };
@@ -97,12 +101,16 @@
           run = [ "move-node-to-workspace R"];
         }
         {
+          "if".app-id = "com.kapeli.dashdoc";
+          run = [ "move-node-to-workspace R"];
+        }
+        {
           "if".app-id = "net.kovidgoyal.kitty";
           run = [ "move-node-to-workspace 1"];
         }
         {
           "if".app-id = "com.kagi.kagimacOS";
-          run = [ "move-node-to-workspace B"];
+          run = [ "move-node-to-workspace 1"];
         }
         {
           "if".app-id = "com.spotify.client";
