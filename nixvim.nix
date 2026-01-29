@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 
 {
-  enable = true;
+  enable = false;
   vimAlias = true;
   clipboard.register = "unnamedplus";
   colorschemes.modus.enable = true;
