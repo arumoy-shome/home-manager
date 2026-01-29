@@ -32,6 +32,8 @@
   home.sessionVariables = {
   };
 
+  home.shell.enableShellIntegration = true; # default: globally enable shell integration for all supported programs
+
   editorconfig.enable = true;
 
   # Let Home Manager install and manage itself.
@@ -106,6 +108,7 @@
     enable = true;
     defaultKeymap = "emacs";
     enableCompletion = true;
+    enableVteIntegration = true;
     historySubstringSearch.enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -127,13 +130,14 @@
 
     history = {
       append = true;
+      extended = true;
       expireDuplicatesFirst = true;
       ignoreAllDups = true;
       saveNoDups = true;
     };
 
     oh-my-zsh = {
-      enable = true;
+      enable = false;
       theme = "robbyrussell";
     };
   };
@@ -230,10 +234,7 @@
   programs.uv.enable = true;
   programs.ripgrep.enable = true;
   programs.fd.enable = true;
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  programs.fzf.enable = true;
 
   programs.alacritty = {
     enable = false;
@@ -247,7 +248,7 @@
     enable = true;
     font = {
       name = "SauceCodePro Nerd Font";
-      size = 18.0;
+      size = 13.0;
     };
     keybindings = {
       "kitty_mod+enter" = "launch --cwd=current";
@@ -262,7 +263,6 @@
       tab_title_template =  "{'Z ' if layout_name == 'stack' else ''}{title}";
       tab_bar_min_tabs = 1;
     };
-    shellIntegration.enableZshIntegration = true;
     themeFile = "Modus_Vivendi";
   };
 
