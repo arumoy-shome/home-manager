@@ -17,6 +17,8 @@
     pkgs.tectonic
     pkgs.ltex-ls-plus
     pkgs.typst
+    pkgs.hunspell
+    pkgs.languagetool
   ];
 
   home.file = {
