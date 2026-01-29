@@ -4,7 +4,10 @@
   environment.systemPackages =
     [];
 
-  fonts.packages = [ pkgs.nerd-fonts.sauce-code-pro ];
+  fonts.packages = [
+    pkgs.nerd-fonts.sauce-code-pro
+    pkgs.ia-writer-duospace
+  ];
 
   nix.settings.experimental-features = "nix-command flakes";
   nix.enable = false;
