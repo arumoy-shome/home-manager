@@ -236,6 +236,7 @@
   programs.ripgrep.enable = true;
   programs.fd.enable = true;
   programs.fzf.enable = true;
+  programs.starship.enable = true;
 
   programs.alacritty = {
     enable = false;
