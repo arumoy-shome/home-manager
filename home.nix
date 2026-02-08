@@ -206,8 +206,7 @@
       "*.fdb_latexmk"
     ];
   };
-# NOTE: using homebrew until build failure is fixed
-  programs.gitui.enable = false;
+  programs.gitui.enable = true;
   programs.delta = {
     enable = true;
     enableGitIntegration = true;
