@@ -19,9 +19,11 @@
     pkgs.typst
     pkgs.hunspell
     pkgs.languagetool
+    pkgs.bibtool
   ];
 
   home.file = {
+    ".bibtoolrsc".source = files/bibtoolrsc;
     ".editorconfig".source = files/editorconfig;
     ".hammerspoon" = {
       source = files/hammerspoon;
