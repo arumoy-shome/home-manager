@@ -15,10 +15,6 @@
   home.packages = [
     pkgs.python314
     pkgs.tectonic
-    pkgs.ltex-ls-plus
-    pkgs.typst
-    pkgs.hunspell
-    pkgs.languagetool
     pkgs.bibtool
   ];
 
@@ -269,7 +265,7 @@
   };
 
   programs.texlive = {
-    enable = true;
+    enable = false;
     extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
   };
 
