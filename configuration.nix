@@ -25,7 +25,7 @@
   security.pam.services.sudo_local.touchIdAuth = true;
 
   services.aerospace = {
-    enable = true;
+    enable = false;
     settings = {
       default-root-container-layout = "accordion";
       default-root-container-orientation = "vertical";
