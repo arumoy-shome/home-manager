@@ -55,22 +55,10 @@
   programs.helix.enable = false;
 
   programs.neovim = {
-    enable = false;
+    enable = true;
     defaultEditor = true;
     vimAlias = true;
     vimdiffAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      mini-nvim
-      vimtex
-      conform-nvim
-      nvim-lspconfig
-      nvim-treesitter
-      nvim-treesitter-parsers.latex
-      nvim-treesitter-parsers.bibtex
-      nvim-treesitter-parsers.nix
-      nvim-treesitter-parsers.python
-      nvim-treesitter-parsers.typst
-    ];
   };
 
   programs.vim = {
@@ -203,6 +191,7 @@
     ];
   };
   programs.gitui.enable = true;
+  programs.lazygit.enable = true;
   programs.delta = {
     enable = true;
     enableGitIntegration = true;
