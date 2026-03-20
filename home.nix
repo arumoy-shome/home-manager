@@ -255,7 +255,7 @@
       tab_title_template =  "{'Z ' if layout_name == 'stack' else ''}{title}";
       tab_bar_min_tabs = 1;
     };
-    themeFile = "Modus_Vivendi";
+    themeFile = "Catppuccin-Mocha";
   };
 
   programs.texlive = {
