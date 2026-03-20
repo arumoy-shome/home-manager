@@ -223,6 +223,11 @@
   programs.fzf.enable = true;
   programs.starship.enable = true;
 
+  programs.eza = {
+    enable = true;
+    colors = "auto";
+  };
+
   programs.alacritty = {
     enable = false;
     settings = {
