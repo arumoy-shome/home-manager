@@ -190,7 +190,7 @@
       "*.fdb_latexmk"
     ];
   };
-  programs.gitui.enable = true;
+  programs.gitui.enable = false;
   programs.lazygit.enable = true;
   programs.delta = {
     enable = true;
