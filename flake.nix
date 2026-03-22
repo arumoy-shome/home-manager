@@ -13,22 +13,28 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs, nixvim }: {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#aru-mbp13
-    darwinConfigurations."aru-mbp13" = nix-darwin.lib.darwinSystem {
+  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs, nixvim }:
+  let
+    mkSystem = { host, user ? "aru" }: nix-darwin.lib.darwinSystem {
       modules = [
         nixvim.nixDarwinModules.nixvim {
           programs.nixvim.imports = [ ./nixvim.nix ];
         }
-        ./configuration.nix
+        ./modules/darwin
+        ./hosts/${host}
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.aru = ./home.nix;
+          home-manager.users.${user} = ./modules/home;
         }
       ];
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs user; };
+    };
+  in {
+    # Build darwin flake using:
+    # $ darwin-rebuild switch --flake .#<hostname>
+    darwinConfigurations = {
+      "aru-mbp13" = mkSystem { host = "aru-mbp13"; };
     };
   };
 }

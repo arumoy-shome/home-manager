@@ -20,10 +20,10 @@
   ];
 
   home.file = {
-    ".bibtoolrsc".source = files/bibtoolrsc;
-    ".editorconfig".source = files/editorconfig;
+    ".bibtoolrsc".source = ../../files/bibtoolrsc;
+    ".editorconfig".source = ../../files/editorconfig;
     ".hammerspoon" = {
-      source = files/hammerspoon;
+      source = ../../files/hammerspoon;
       recursive = true;
     };
   };

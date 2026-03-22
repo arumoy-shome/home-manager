@@ -5,4 +5,4 @@ clean:
 
 update:
 	sudo nix flake update
-	sudo darwin-rebuild switch
+	sudo darwin-rebuild switch --flake .#$(shell hostname -s)

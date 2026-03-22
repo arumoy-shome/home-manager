@@ -2,9 +2,24 @@
 # Installation
 1. Install nix using Determinate Systems installer
 1. Install nix-darwin
-  + TODO: figure out how to scale this configuration across multiple devices
   + install homebrew
 1. Install home-manager
+
+# Usage
+
+To build and switch to the current machine's configuration:
+
+```sh
+sudo darwin-rebuild switch --flake .#$(hostname -s)
+```
+
+To add a new machine, create `hosts/<hostname>/default.nix` (system config) and
+`hosts/<hostname>/home.nix` (home-manager overrides), then add an entry to
+`darwinConfigurations` in `flake.nix`:
+
+```nix
+"<hostname>" = mkSystem "<hostname>";
+```
 
 # Karabiner Elements
 - I use the *Modern Space Cadet (Rev 3)* rules for space cadet shifts and smart caps lock.
