@@ -16,6 +16,7 @@
     pkgs.python314
     pkgs.tectonic
     pkgs.bibtool
+    pkgs.quarto
   ];
 
   home.file = {
@@ -265,7 +266,7 @@
     extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
   };
 
-  programs.pandoc.enable = true;
+  programs.pandoc.enable = false; # bundled with quarto
   programs.sioyek.enable = false;
   programs.aichat.enable = false;
 
