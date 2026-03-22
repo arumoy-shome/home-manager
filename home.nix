@@ -198,10 +198,12 @@
   };
 
   programs.tmux = {
-    enable = false;
+    enable = true;
     terminal = "tmux-256color";
     extraConfig = "
       set-option -a terminal-features 'xterm-256color:RGB'
+      bind C-v split-window -h -c '#{pane_current_path}'
+      bind C-s split-window -v -c '#{pane_current_path}'
     ";
     aggressiveResize = true;
     baseIndex = 1;
