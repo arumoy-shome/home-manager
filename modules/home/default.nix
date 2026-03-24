@@ -278,7 +278,7 @@
   };
 
   programs.texlive = {
-    enable = false;
+    enable = true;
     extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
   };
 
